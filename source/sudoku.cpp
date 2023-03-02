@@ -1,5 +1,7 @@
 #include "sudoku.h"
 
+#include <iostream>
+
 Sudoku::Sudoku() {
     emptyPos_.reserve(64U);
     rows_.reserve(9U);

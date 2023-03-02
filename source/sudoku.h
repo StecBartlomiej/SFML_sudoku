@@ -1,7 +1,6 @@
 #ifndef SDL2_TEST_SUDOKU_H
 #define SDL2_TEST_SUDOKU_H
 
-#include <iostream>
 #include <vector>
 #include <bitset>
 
@@ -16,7 +15,7 @@ public:
 
     void setSudoku(std::size_t i, std::size_t j, int number);
 
-    /// @return a int value under the tab[i][j]
+    /// @return value under the tab[i][j]
     [[nodiscard]] int operator() (std::size_t i, std::size_t j)const { return tab_[i][j];}
 
     void reset();

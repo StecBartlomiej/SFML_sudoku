@@ -5,6 +5,8 @@
 #include <string>
 #include "sudoku.h"
 #include <iostream>
+#include "ResourceHolder.hpp"
+#include "FontID.hpp"
 
 /// Should only be display !
 class Window {
@@ -19,14 +21,17 @@ public:
     [[nodiscard]] bool isRunning() const { return window_.isOpen();}
 
 private:
+
+    void resize(uint32_t width, uint32_t height);
+
     /// Graphics method
     void printSudoku();
+
+    void printGrid();
 
     void printBoard();
 
     void printButton();
-
-    static sf::Text renderNumber(int number, int charSize = 60);
 
     /// User input method
     void mouseLeftClick(int x, int y);
@@ -35,21 +40,15 @@ private:
 
 private:
     sf::RenderWindow window_;
-    Sudoku sudoku;
-    static inline sf::Font font{};
-    static inline auto backgroundColor = sf::Color(220, 220, 220);
+    sf::FloatRect gridRect_; // area where the sudoku is
+    Sudoku sudoku_;
+
+    ResourceHolder<sf::Font, FontID> fontHolder_;
+
+    static inline const auto backgroundColor = sf::Color(220, 220, 220);
 };
 
-/// Handles a input to a screen
-class InputWindow: public Window{
-public:
-    InputWindow();
-
-
-private:
-    /// ???
-};
-
+sf::Text renderNumber(const sf::Font& font, int number, uint32_t size = 64);
 
 
 #endif //SFML_SUDOKU_WINDOW_H

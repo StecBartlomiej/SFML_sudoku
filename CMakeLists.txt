@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 project(SFML_sudoku)
 
 set(CMAKE_CXX_STANDARD 20)
-add_compile_options(-Wall -Wextra -pedantic -Werror -O2 )
+#add_compile_options(-Wall -Wextra -pedantic -Werror -O2 )
 
 file(GLOB SOURCES
         source/*.cpp
@@ -23,7 +23,7 @@ find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 IF (WIN32)
     ## WIN32 - for hiding a console window
-    add_executable(${PROJECT_NAME} WIN32 main.cpp ${SOURCES} )
+    add_executable(${PROJECT_NAME} main.cpp ${SOURCES} )
 ELSE()
     add_executable(${PROJECT_NAME} main.cpp ${SOURCES} )
 ENDIF()
