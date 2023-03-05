@@ -5,8 +5,6 @@
 #include <string>
 #include "sudoku.h"
 #include <iostream>
-#include "ResourceHolder.hpp"
-#include "FontID.hpp"
 
 /// Should only be display !
 class Window {
