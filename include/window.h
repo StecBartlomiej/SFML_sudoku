@@ -42,11 +42,11 @@ private:
 private:
     sf::RenderWindow window_;
     sf::FloatRect gridRect_; // area where the sudoku is
-    sf::FloatRect solveButton_;
-    sf::FloatRect resetButton_;
+//    sf::FloatRect solveButton_;
+//    sf::FloatRect resetButton_;
     Sudoku sudoku_;
 
-    ResourceHolder<sf::Font, FontID> fontHolder_;
+    ResourceHolder<sf::Font, FontID> fontHolder_{};
 
     static inline const auto backgroundColor = sf::Color(220, 220, 220);
 };
