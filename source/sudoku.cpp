@@ -1,4 +1,4 @@
-#include "sudoku.h"
+#include "../include/sudoku.h"
 
 Sudoku::Sudoku() {
     emptyPos_.reserve(64U);

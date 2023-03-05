@@ -1,4 +1,4 @@
-#include "app.h"
+#include "../include/app.h"
 
 
 App::App(): window_{}, sudoku_{}

@@ -1,7 +1,7 @@
 #ifndef SFML_SUDOKU_WINDOW_H
 #define SFML_SUDOKU_WINDOW_H
 
-#include <SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
 #include <string>
 #include "sudoku.h"
 #include <iostream>
