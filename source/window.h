@@ -6,6 +6,9 @@
 #include "sudoku.h"
 #include <iostream>
 
+#include "FontID.hpp"
+#include "ResourceHolder.hpp"
+
 /// Should only be display !
 class Window {
 public:
