@@ -1,11 +1,11 @@
 #include "../include/window.h"
 
 Window::Window(uint32_t width, uint32_t height, const std::string &title): sudoku{} {
-    //sf::ContextSettings settings;
-    //settings.antialiasingLevel = 8;
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
 
-    //window_.create(sf::VideoMode(width, height), title, sf::Style::Default &(~sf::Style::Resize), settings);
-    window_.create(sf::VideoMode({width, height}), title);
+    window_.create(sf::VideoMode({width, height}), title, sf::Style::Default &(~sf::Style::Resize), settings);
+    //window_.create(sf::VideoMode({width, height}), title);
     window_.setFramerateLimit(30);
 
     if (!font.loadFromFile("../lib/font/calibri-regular.ttf")){
