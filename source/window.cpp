@@ -1,7 +1,8 @@
 #include "window.h"
 #include "FontID.hpp"
 
-Window::Window(uint32_t width, uint32_t height, const std::string &title) : gridRect_{}, sudoku_{}, fontHolder_{}
+Window::Window(uint32_t width, uint32_t height, const std::string &title) : gridRect_{}, sudoku_{}, fontHolder_{},
+    solveButton_{}, resetButton_{}
 {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
@@ -10,6 +11,7 @@ Window::Window(uint32_t width, uint32_t height, const std::string &title) : grid
     window_.setVerticalSyncEnabled(true);
 
     fontHolder_.load(FontID::calibri, "../lib/font/calibri-regular.ttf");
+
 }
 
 void Window::handleEvent()
@@ -25,20 +27,13 @@ void Window::handleEvent()
         {
             resize(event.size.width, event.size.height);
         }
-
-            /// will be delegated to new function (?)
         else if (event.type == sf::Event::MouseButtonPressed)
         {
             if (event.mouseButton.button == sf::Mouse::Left)
-            {
                 mouseLeftClick(event.mouseButton.x, event.mouseButton.y);
-            }
             else if (event.mouseButton.button == sf::Mouse::Right)
-            {
                 mouseRightCLick(event.mouseButton.x, event.mouseButton.y);
-            }
         }
-
     }
 }
 
@@ -49,7 +44,7 @@ void Window::display()
     printBoard();
     printSudoku();
     printGrid();
-    printButton();
+    printButtons();
 
     window_.display();
 }
@@ -126,7 +121,7 @@ void Window::printSudoku()
 }
 
 /// TODO
-void Window::printButton()
+void Window::printButtons()
 {
 
 }

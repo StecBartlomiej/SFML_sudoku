@@ -31,7 +31,7 @@ private:
 
     void printBoard();
 
-    void printButton();
+    void printButtons();
 
     /// User input method
     void mouseLeftClick(int x, int y);
@@ -41,6 +41,8 @@ private:
 private:
     sf::RenderWindow window_;
     sf::FloatRect gridRect_; // area where the sudoku is
+    sf::FloatRect solveButton_;
+    sf::FloatRect resetButton_;
     Sudoku sudoku_;
 
     ResourceHolder<sf::Font, FontID> fontHolder_;
